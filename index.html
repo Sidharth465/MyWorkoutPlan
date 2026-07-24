@@ -27,10 +27,93 @@
   .demo-link img { width: 96px; height: 54px; object-fit: cover; border-radius: 4px; border: 1px solid #c5d8e6; display: block; }
   .demo-link:hover img { border-color: #145A8A; }
   .demo-link:hover span { text-decoration: underline; }
+  .approval {
+    margin: 36px 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px dashed #b7c9d6;
+  }
+  .approval-text { flex: 1; min-width: 200px; font-size: 12px; color: #333; }
+  .approval-text .label { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .approval-text .trainer-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    color: #145A8A;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+  .approval-text .trainer-title { color: #555; font-size: 12px; }
+  .approval-text .trainer-meta { color: #777; font-size: 11px; margin-top: 8px; }
+  .approval-text .trainer-meta a { color: #145A8A; text-decoration: none; }
+  .approval-text .trainer-meta a:hover { text-decoration: underline; }
+  .stamp {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    border: 3px solid #8B1A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-8deg);
+    flex-shrink: 0;
+    margin: 0 auto;
+    box-shadow: inset 0 0 0 2px #8B1A1A;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(139,26,26,0.06), transparent 55%),
+      rgba(255,248,248,0.9);
+    color: #8B1A1A;
+    opacity: 0.92;
+  }
+  .stamp-inner {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    border: 1.5px solid #8B1A1A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  .stamp-gym {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+  .stamp-line {
+    width: 70%;
+    height: 1px;
+    background: #8B1A1A;
+    margin: 5px 0;
+    opacity: 0.7;
+  }
+  .stamp-mark {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    line-height: 1.25;
+  }
+  .stamp-date {
+    font-size: 9px;
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
   @media (max-width: 520px) {
     .demo-link img { width: 72px; height: 40px; }
     td.demo { width: 84px; }
     td.muscles { font-size: 10px; min-width: 110px; }
+    .approval { justify-content: center; text-align: center; }
+    .approval-text { text-align: center; }
   }
 </style>
 </head>
@@ -268,6 +351,17 @@
 </ul>
 
 <p class="footer">Stay consistent. Strength first. Fat loss follows.</p>
+
+<div class="approval">
+  <div class="approval-text">
+    <div class="label">Prepared &amp; approved by</div>
+    <div class="trainer-name">FitnessProgramer</div>
+    <div class="trainer-title">Certified Strength &amp; Conditioning Trainer</div>
+    
+  </div>
+  <img src="https://fitnessprogramer.com/wp-content/uploads/2021/03/logo.png" alt="Fitness Programer.Com" width="200" height="100">
+  
+</div>
 
 </body>
 </html>
