@@ -1,367 +1,696 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sid Fitness Plan</title>
-<style>
-  body { font-family: Calibri, Arial, sans-serif; max-width: 920px; margin: 40px auto; padding: 0 16px; color: #222; line-height: 1.45; }
-  h1 { color: #145A8A; text-align: center; font-size: 26px; margin-bottom: 4px; }
-  .subtitle { text-align: center; color: #555; font-size: 14px; margin-bottom: 2px; }
-  .meta { text-align: center; color: #777; font-size: 12px; margin-bottom: 28px; }
-  h2 { color: #145A8A; font-size: 16px; border-bottom: 1px solid #cfe0ec; padding-bottom: 4px; margin-top: 26px; }
-  h3 { color: #286090; font-size: 13px; margin-top: 14px; }
-  table { border-collapse: collapse; width: 100%; margin: 10px 0 16px; font-size: 12px; }
-  th { background: #145A8A; color: #fff; text-align: left; padding: 8px 10px; }
-  td { border: 1px solid #ccc; padding: 7px 10px; vertical-align: middle; }
-  tr:nth-child(even) td { background: #f5f9fc; }
-  ul { margin: 6px 0 12px 20px; }
-  li { margin-bottom: 4px; }
-  .note { background: #f0f6fa; border-left: 3px solid #145A8A; padding: 10px 12px; margin: 12px 0; font-size: 12px; }
-  .footer { text-align: center; color: #145A8A; font-weight: bold; margin-top: 28px; font-size: 12px; }
-  td.demo { width: 110px; text-align: center; padding: 6px; }
-  td.muscles { font-size: 11px; line-height: 1.4; min-width: 140px; }
-  td.muscles strong { color: #145A8A; font-weight: 700; }
-  td.muscles .also { color: #555; display: block; margin-top: 2px; }
-  .demo-link { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; color: #145A8A; font-size: 11px; font-weight: 600; }
-  .demo-link img { width: 96px; height: 54px; object-fit: cover; border-radius: 4px; border: 1px solid #c5d8e6; display: block; }
-  .demo-link:hover img { border-color: #145A8A; }
-  .demo-link:hover span { text-decoration: underline; }
-  .approval {
-    margin: 36px 0 16px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding-top: 20px;
-    border-top: 1px dashed #b7c9d6;
-  }
-  .approval-text { flex: 1; min-width: 200px; font-size: 12px; color: #333; }
-  .approval-text .label { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
-  .approval-text .trainer-name {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
-    color: #145A8A;
-    font-style: italic;
-    line-height: 1.1;
-    margin-bottom: 2px;
-  }
-  .approval-text .trainer-title { color: #555; font-size: 12px; }
-  .approval-text .trainer-meta { color: #777; font-size: 11px; margin-top: 8px; }
-  .approval-text .trainer-meta a { color: #145A8A; text-decoration: none; }
-  .approval-text .trainer-meta a:hover { text-decoration: underline; }
-  .stamp {
-    width: 132px;
-    height: 132px;
-    border-radius: 50%;
-    border: 3px solid #8B1A1A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(-8deg);
-    flex-shrink: 0;
-    margin: 0 auto;
-    box-shadow: inset 0 0 0 2px #8B1A1A;
-    background:
-      radial-gradient(circle at 30% 25%, rgba(139,26,26,0.06), transparent 55%),
-      rgba(255,248,248,0.9);
-    color: #8B1A1A;
-    opacity: 0.92;
-  }
-  .stamp-inner {
-    width: 112px;
-    height: 112px;
-    border-radius: 50%;
-    border: 1.5px solid #8B1A1A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  .stamp-gym {
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    line-height: 1.15;
-  }
-  .stamp-line {
-    width: 70%;
-    height: 1px;
-    background: #8B1A1A;
-    margin: 5px 0;
-    opacity: 0.7;
-  }
-  .stamp-mark {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    line-height: 1.25;
-  }
-  .stamp-date {
-    font-size: 9px;
-    margin-top: 4px;
-    letter-spacing: 0.04em;
-  }
-  @media (max-width: 520px) {
-    .demo-link img { width: 72px; height: 40px; }
-    td.demo { width: 84px; }
-    td.muscles { font-size: 10px; min-width: 110px; }
-    .approval { justify-content: center; text-align: center; }
-    .approval-text { text-align: center; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sid Fitness Plan - Fully Periodized 6-Day PPL (A/B Split)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/muscle-maps.js" defer></script>
 </head>
+
 <body>
 
-<h1>Personal Fitness Plan</h1>
-<p class="subtitle">Strength · Fat Loss · Muscle Building</p>
-<p class="meta">Prepared for Sid &nbsp;|&nbsp; July 2026</p>
+  <main class="page-shell">
+    <header class="page-header">
+      <p class="eyebrow">Training field guide · 6 days / week</p>
+      <h1>Personal Fitness Plan</h1>
+      <p class="subtitle">Complete 6-Day Periodized Push / Pull / Legs Architecture (A/B Split)</p>
+      <p class="meta">Prepared for Sid &nbsp;|&nbsp; Full-Week Muscle Group Coverage</p>
+    </header>
 
-<h2>1. Profile</h2>
-<table>
-  <tr><th>Detail</th><th>Value</th></tr>
-  <tr><td>Name</td><td>Sid</td></tr>
-  <tr><td>Age</td><td>26 years</td></tr>
-  <tr><td>Weight</td><td>66 kg</td></tr>
-  <tr><td>Height</td><td>163 cm</td></tr>
-  <tr><td>BMI (approx.)</td><td>~24.8 (normal range)</td></tr>
-  <tr><td>Current concerns</td><td>Bulging stomach, love handles</td></tr>
-  <tr><td>Activity</td><td>Goes to gym — needs structured plan</td></tr>
-</table>
-
-<h2>2. Goals</h2>
-<ul>
-  <li>Lose fat around the stomach and love handles</li>
-  <li>Gain strength with progressive overload</li>
-  <li>Build a more muscular physique (body recomposition)</li>
-</ul>
-<div class="note"><strong>Note:</strong> Spot reduction does not work. Fat loss is systemic. Abs and love handles improve when overall body fat drops while muscle is preserved/built through lifting + protein.</div>
-
-<h2>3. Nutrition Guidelines</h2>
-<h3>Daily targets</h3>
-<table>
-  <tr><th>Metric</th><th>Target</th></tr>
-  <tr><td>Calories</td><td>1,900–2,100 kcal/day (mild cut)</td></tr>
-  <tr><td>Protein</td><td>130–160 g/day</td></tr>
-  <tr><td>Carbs</td><td>Around workouts (rice, oats, fruit)</td></tr>
-  <tr><td>Fats</td><td>Moderate (eggs, nuts in controlled amounts, cooking oil)</td></tr>
-  <tr><td>Water</td><td>Stay well hydrated</td></tr>
-  <tr><td>Sleep</td><td>7–8 hours/night</td></tr>
-</table>
-<h3>Habits</h3>
-<ul>
-  <li>Track food for 2–3 weeks to stay consistent</li>
-  <li>Aim for ~0.25–0.5 kg fat loss per week</li>
-  <li>If weight stalls for 2+ weeks, reduce calories by ~150–200</li>
-  <li>Limit sugary drinks, late-night snacking, and excess oils/nuts</li>
-  <li>Include protein in every meal (chicken, eggs, fish, dal, paneer, yogurt, whey)</li>
-</ul>
-
-<h2>4. Workout Order (Every Gym Day)</h2>
-<table>
-  <tr><th>Step</th><th>What to do</th><th>Duration</th></tr>
-  <tr><td>1. Warm-up</td><td>Easy treadmill walk or cycle + dynamic movements</td><td>5–8 min</td></tr>
-  <tr><td>2. Lifting</td><td>Push / Pull / Legs + Core (main session)</td><td>60–75 min</td></tr>
-  <tr><td>3. Cardio</td><td>Incline walk, light jog, or easy cycling</td><td>15–20 min</td></tr>
-  <tr><td>4. Stretch</td><td>Static stretching (hold 20–30 sec)</td><td>5 min</td></tr>
-</table>
-<div class="note"><strong>Important:</strong> Do NOT do hard running or heavy cycling before lifting. Save real cardio for after strength training so you stay strong on the big lifts.</div>
-
-<h2>5. Weekly Schedule (Push / Pull / Legs)</h2>
-<table>
-  <tr><th>Day</th><th>Focus</th></tr>
-  <tr><td>Monday</td><td>Push (Chest, Shoulders, Triceps)</td></tr>
-  <tr><td>Tuesday</td><td>Pull (Back, Biceps, Rear Shoulders)</td></tr>
-  <tr><td>Wednesday</td><td>Legs + Core</td></tr>
-  <tr><td>Thursday</td><td>Push (Chest, Shoulders, Triceps)</td></tr>
-  <tr><td>Friday</td><td>Pull (Back, Biceps, Rear Shoulders)</td></tr>
-  <tr><td>Saturday</td><td>Legs + Core</td></tr>
-  <tr><td>Sunday</td><td>Rest — walk 8,000–10,000 steps</td></tr>
-</table>
-<p><em>Easier alternative (4 days): Mon Push · Tue Pull · Thu Legs · Fri Push (or Upper). Rest other days.</em></p>
-
-<div class="note"><strong>Form + muscles:</strong> Tap <em>Watch form</em> for technique. The <em>Muscles trained</em> column shows the main part hit first (in bold), then helpers — e.g. which chest region or which triceps head.</div>
-
-<h2>6. Day 1 &amp; 4 — Push</h2>
-<table>
-  <tr><th>Exercise</th><th>Sets × Reps</th><th>Muscles trained</th><th>Demo</th></tr>
-  <tr>
-    <td>Bench press (barbell or dumbbell)</td>
-    <td>4 × 6–10</td>
-    <td class="muscles"><strong>Mid / lower chest</strong><span class="also">Front delts · Triceps (all 3 heads)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/shorts/hWbUlkb5Ms4" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/hWbUlkb5Ms4/mqdefault.jpg" alt="Bench press form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Incline dumbbell press</td>
-    <td>3 × 8–12</td>
-    <td class="muscles"><strong>Upper chest</strong><span class="also">Front delts · Triceps (all 3 heads)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=LYZDsNv8kJ8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/LYZDsNv8kJ8/mqdefault.jpg" alt="Incline dumbbell press form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Overhead press (dumbbell or machine)</td>
-    <td>3 × 8–12</td>
-    <td class="muscles"><strong>Front delts</strong><span class="also">Side delts · Triceps (esp. long head)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=qEwKCR5JCog" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/qEwKCR5JCog/mqdefault.jpg" alt="Dumbbell shoulder press form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Lateral raises</td>
-    <td>3 × 12–15</td>
-    <td class="muscles"><strong>Side delts</strong><span class="also">Upper traps (light assist)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/3VcKaXpzqRo/mqdefault.jpg" alt="Lateral raise form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Tricep pushdowns or dips</td>
-    <td>3 × 10–15</td>
-    <td class="muscles"><strong>Triceps — lateral + medial heads</strong><span class="also">Pushdowns: less long head · Dips: all 3 heads + lower chest</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/2-LAMcpzODU/mqdefault.jpg" alt="Tricep pushdown form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Optional: Chest fly (machine/cable)</td>
-    <td>2 × 12–15</td>
-    <td class="muscles"><strong>Mid chest</strong><span class="also">Chest isolation · Almost no triceps</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=Iwe6AmxVf7o" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/Iwe6AmxVf7o/mqdefault.jpg" alt="Cable chest fly form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-</table>
-<p>Rest: 2–3 min on big presses, 60–90 sec on isolation work.</p>
-
-<h2>7. Day 2 &amp; 5 — Pull</h2>
-<table>
-  <tr><th>Exercise</th><th>Sets × Reps</th><th>Muscles trained</th><th>Demo</th></tr>
-  <tr>
-    <td>Pull-ups or lat pulldown</td>
-    <td>4 × 6–10</td>
-    <td class="muscles"><strong>Lats (width)</strong><span class="also">Teres major · Biceps · Rear delts</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=eGo4IYlbE5g" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/eGo4IYlbE5g/mqdefault.jpg" alt="Pull-up form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Seated cable row or bent-over row</td>
-    <td>4 × 8–12</td>
-    <td class="muscles"><strong>Mid-back thickness</strong><span class="also">Rhomboids · Mid traps · Lats · Rear delts</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GZbfZ033f74/mqdefault.jpg" alt="Seated cable row form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Single-arm dumbbell row</td>
-    <td>3 × 8–12</td>
-    <td class="muscles"><strong>Lats (thickness)</strong><span class="also">Mid-back · Rear delts · Biceps</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/shorts/aFtWSOruuhs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/aFtWSOruuhs/mqdefault.jpg" alt="Single-arm dumbbell row form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Face pulls</td>
-    <td>3 × 12–15</td>
-    <td class="muscles"><strong>Rear delts</strong><span class="also">Rotator cuff · Mid / upper traps</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=sHSY0Ao8QHs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/sHSY0Ao8QHs/mqdefault.jpg" alt="Face pull form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Barbell or dumbbell curls</td>
-    <td>3 × 10–12</td>
-    <td class="muscles"><strong>Biceps — both heads</strong><span class="also">Long + short head · Brachialis (under biceps)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ykJmrZ5v0Oo/mqdefault.jpg" alt="Dumbbell curl form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Optional: Rear delt fly</td>
-    <td>2 × 12–15</td>
-    <td class="muscles"><strong>Rear delts</strong><span class="also">Isolation for posterior shoulder</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=EA7u4Q_8HQ0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/EA7u4Q_8HQ0/mqdefault.jpg" alt="Rear delt fly form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-</table>
-
-<h2>8. Day 3 &amp; 6 — Legs + Core</h2>
-<table>
-  <tr><th>Exercise</th><th>Sets × Reps</th><th>Muscles trained</th><th>Demo</th></tr>
-  <tr>
-    <td>Squat (barbell / goblet / leg press)</td>
-    <td>4 × 6–10</td>
-    <td class="muscles"><strong>Quads (all 4 heads)</strong><span class="also">Glutes · Adductors · Core</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ultWZbUMPL8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ultWZbUMPL8/mqdefault.jpg" alt="Squat form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Romanian deadlift</td>
-    <td>3 × 8–12</td>
-    <td class="muscles"><strong>Hamstrings (all)</strong><span class="also">Glutes · Lower back (erectors)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=jEy_czb3RKA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/jEy_czb3RKA/mqdefault.jpg" alt="Romanian deadlift form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Walking lunges or Bulgarian split squat</td>
-    <td>3 × 8–10 per leg</td>
-    <td class="muscles"><strong>Quads + glutes</strong><span class="also">Each leg separately · Hamstrings assist</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2C-uNgKwPLE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/2C-uNgKwPLE/mqdefault.jpg" alt="Bulgarian split squat form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Leg curl</td>
-    <td>3 × 10–15</td>
-    <td class="muscles"><strong>Hamstrings (isolation)</strong><span class="also">All 3 hamstring muscles</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=1Tq3QdYUuHs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1Tq3QdYUuHs/mqdefault.jpg" alt="Leg curl form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Calf raises</td>
-    <td>3 × 12–15</td>
-    <td class="muscles"><strong>Calves — gastrocnemius</strong><span class="also">Standing: upper calf · Seated: soleus (deeper)</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=gwLzBJYoWlI" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/gwLzBJYoWlI/mqdefault.jpg" alt="Calf raise form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Plank</td>
-    <td>3 × 30–60 sec</td>
-    <td class="muscles"><strong>Deep core</strong><span class="also">Transverse abs · Rectus abs · Obliques</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ASdvN_XEl_c" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ASdvN_XEl_c/mqdefault.jpg" alt="Plank form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Hanging knee raise or lying leg raise</td>
-    <td>3 × 10–15</td>
-    <td class="muscles"><strong>Lower abs</strong><span class="also">Rectus abdominis (lower) · Hip flexors</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=p9hhX_Sx5v0" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/p9hhX_Sx5v0/mqdefault.jpg" alt="Hanging knee raise form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-  <tr>
-    <td>Dead bug or bird-dog</td>
-    <td>2 × 8–10 per side</td>
-    <td class="muscles"><strong>Deep core control</strong><span class="also">Transverse abs · Stability · Lower-back support</span></td>
-    <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=4XLEnwUr1d8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/4XLEnwUr1d8/mqdefault.jpg" alt="Dead bug form" width="96" height="54" loading="lazy"><span>Watch form</span></a></td>
-  </tr>
-</table>
-
-<h2>9. How to Progress</h2>
-<ul>
-  <li>Log every workout (exercise, weight, reps)</li>
-  <li>When you hit the top of the rep range on all sets with good form, add a little weight next time</li>
-  <li>Leave about 1–3 reps in reserve — do not fail every set</li>
-  <li>Stay consistent for at least 8 weeks before changing the program</li>
-  <li>Expect visible midsection changes in about 8–16 weeks with diet + training</li>
-</ul>
-
-<h2>10. Weekly Consistency Checklist</h2>
-<ul>
-  <li>Protein every meal</li>
-  <li>Lift 4–6 days with this written plan</li>
-  <li>Walk daily (aim 8–10k steps)</li>
-  <li>Sleep 7–8 hours</li>
-  <li>Weigh yourself weekly (use a weekly average, not daily panic)</li>
-</ul>
-
-<h2>11. Extra Notes</h2>
-<ul>
-  <li>If very tired after lifting, skip post-workout cardio and just hit your step goal that day</li>
-  <li>1–2 longer cardio sessions can be done on rest days instead of after lifting</li>
-  <li>Keep post-lift cardio easy to moderate so recovery stays good</li>
-  <li>This is general fitness guidance, not medical advice. See a doctor if you have health conditions before starting.</li>
-</ul>
-
-<p class="footer">Stay consistent. Strength first. Fat loss follows.</p>
-
-<div class="approval">
-  <div class="approval-text">
-    <div class="label">Prepared &amp; approved by</div>
-    <div class="trainer-name">FitnessProgramer</div>
-    <div class="trainer-title">Certified Strength &amp; Conditioning Trainer</div>
-    
+  <div class="note">
+    <strong>How This A/B System Works:</strong>
+    <ul>
+      <li><strong>Push A vs. Push B:</strong> Push A focuses on chest, shoulders, and arms with presses, dips, and
+        pushdowns. Push B adds an incline press, side raises, and overhead arm extensions.
+      </li>
+      <li><strong>Pull A vs. Pull B:</strong> Pull A emphasizes back width and arms. Pull B adds back thickness,
+        rear-shoulder work, and hammer curls.</li>
+      <li><strong>Legs A vs. Legs B:</strong> Legs A emphasizes thighs and core. Legs B pairs hamstrings and glutes
+        with calves and core work.</li>
+    </ul>
   </div>
-  <img src="https://fitnessprogramer.com/wp-content/uploads/2021/03/logo.png" alt="Fitness Programer.Com" width="200" height="100">
-  
-</div>
+
+  <section class="plan-section table-section" aria-labelledby="schedule-heading" tabindex="0">
+  <h2 id="schedule-heading">1. Weekly Schedule &amp; Target Matrix</h2>
+  <table class="schedule-table">
+    <tr>
+      <th>Day</th>
+      <th>Routine</th>
+      <th>Primary Muscular Focus</th>
+      <th>Arm / Core Specialization</th>
+    </tr>
+    <tr>
+      <td><strong>Monday</strong></td>
+      <td><strong>Push A</strong></td>
+      <td>Chest &amp; Shoulders</td>
+      <td>Arms (Pushdowns and dips)</td>
+    </tr>
+    <tr>
+      <td><strong>Tuesday</strong></td>
+      <td><strong>Pull A</strong></td>
+      <td>Back</td>
+      <td>Arms (Incline curls)</td>
+    </tr>
+    <tr>
+      <td><strong>Wednesday</strong></td>
+      <td><strong>Legs A</strong></td>
+      <td>Legs</td>
+      <td>Core (Hanging raises)</td>
+    </tr>
+    <tr>
+      <td><strong>Thursday</strong></td>
+      <td><strong>Push B</strong></td>
+      <td>Chest &amp; Shoulders</td>
+      <td>Arms (Overhead extensions)</td>
+    </tr>
+    <tr>
+      <td><strong>Friday</strong></td>
+      <td><strong>Pull B</strong></td>
+      <td>Back &amp; Shoulders</td>
+      <td>Arms (Hammer curls)</td>
+    </tr>
+    <tr>
+      <td><strong>Saturday</strong></td>
+      <td><strong>Legs B</strong></td>
+      <td>Legs &amp; Glutes</td>
+      <td>Core (Planks and dead bugs)</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="text-align: center; background: #eef5fa;"><strong>Sunday:</strong> Active Rest &amp;
+        Mobility (Walk 8,000–10,000 steps; hit 3–4L hydration)</td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="push-a-heading" tabindex="0">
+  <h2 id="push-a-heading">2. Day 1 (Monday) — Push A (Chest, Shoulders &amp; Arms)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>Flat Barbell Bench Press</strong></td>
+      <td>4 × 6–10</td>
+      <td class="muscles">
+        <span class="badge badge-push">Chest</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Flat Dumbbell Press (elbows 45°)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Seated Chest Press Machine or Smith Bench
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/shorts/hWbUlkb5Ms4" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/hWbUlkb5Ms4/mqdefault.jpg" alt="Bench press form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Seated DB Shoulder Press</strong></td>
+      <td>3 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Shoulders</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Standing Two-Arm DB Shoulder Press</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Machine Overhead Shoulder Press</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=qEwKCR5JCog" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/qEwKCR5JCog/mqdefault.jpg" alt="Shoulder press form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Standing DB Lateral Raise</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-push">Shoulders</span>
+        <span class="assist">Crucial for V-taper frame</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Incline Lean-Away DB Lateral Raise</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Low Cable Lateral Raise (behind back)</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/3VcKaXpzqRo/mqdefault.jpg" alt="Lateral raise form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Pec Deck Fly Machine</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-push">Chest</span>
+        <span class="assist">Zero arm involvement; pure chest isolation</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Flat Bench Dumbbell Fly</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Standing Cable Fly (Mid Pulley)</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=Iwe6AmxVf7o" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/Iwe6AmxVf7o/mqdefault.jpg" alt="Cable fly form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Cable Rope Pushdown</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Arms</span>
+        <span class="assist">Elbows pinned to ribs; flare rope at bottom</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Neutral Grip DB Kickbacks (elbow high)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Straight Bar Cable Pushdown</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/2-LAMcpzODU/mqdefault.jpg" alt="Tricep pushdown form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Parallel Bar / Bench Dips</strong></td>
+      <td>3 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Arms</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Weighted Bench Dip (DB on thighs)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Assisted Dip Machine or Seated Dip Machine
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/2-LAMcpzODU/mqdefault.jpg" alt="Dips form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="pull-a-heading" tabindex="0">
+  <h2 id="pull-a-heading">3. Day 2 (Tuesday) — Pull A (Back &amp; Arms)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>Wide-Grip Lat Pulldown / Pull-Ups</strong></td>
+      <td>4 × 6–10</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Primary vertical pull for back width</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Heavy DB Pullover across flat bench</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Assisted Pull-up Machine or Wide Lat Pulldown
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=eGo4IYlbE5g" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/eGo4IYlbE5g/mqdefault.jpg" alt="Lat pulldown form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Seated Cable Row (Close V-Grip)</strong></td>
+      <td>4 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Pulls shoulders back; builds mid-back thickness</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Incline Chest-Supported Dual DB Row</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Seated Cable Row or Chest-Supported Machine
+          Row</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/GZbfZ033f74/mqdefault.jpg" alt="Seated cable row form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Single-Arm DB Row</strong></td>
+      <td>3 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Pulling arc back towards the hip</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Single-Arm Bench Row</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Single-Arm Cable Low Row or Iso-Lateral
+          Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/shorts/aFtWSOruuhs" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/aFtWSOruuhs/mqdefault.jpg" alt="Single-arm row form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Cable Rope Face Pulls</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Shoulders</span>
+        <span class="assist">Pulls to eye level; external rotation</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Prone Incline DB Rear Delt Fly</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Reverse Pec Deck Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=sHSY0Ao8QHs" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/sHSY0Ao8QHs/mqdefault.jpg" alt="Face pull form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Incline Dumbbell Curl</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Arms</span>
+        <span class="assist">Arms hang behind body = maximum pre-stretch</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Seated Incline DB Supinating Curl</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Behind-the-Back Cable Biceps Curl</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/ykJmrZ5v0Oo/mqdefault.jpg" alt="Bicep curl form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="legs-a-heading" tabindex="0">
+  <h2 id="legs-a-heading">4. Day 3 (Wednesday) — Legs A (Legs &amp; Core)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>Barbell Squat / 45° Leg Press</strong></td>
+      <td>4 × 6–10</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Heavy DB Goblet Squat (elevated heels)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> 45° Sled Leg Press or Hack Squat Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ultWZbUMPL8" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/ultWZbUMPL8/mqdefault.jpg" alt="Squat form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Bulgarian Split Squat</strong></td>
+      <td>3 × 8–10 / leg</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs &amp; Glutes</span>
+        <span class="assist">Fixes left/right side strength gaps</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Rear Foot Elevated DB Split Squat</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Smith Machine Lunges / Split Squats</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2C-uNgKwPLE" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/2C-uNgKwPLE/mqdefault.jpg" alt="Split squat form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Leg Extension Machine</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs</span>
+        <span class="assist">Peak lockout tension at the top</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Dumbbell Sissy Squat</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Seated Leg Extension Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=YyvSfVjQeL0" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/YyvSfVjQeL0/mqdefault.jpg" alt="Leg extension form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Lying Leg Curl</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs</span>
+        <span class="assist">Controlled curl through a full range</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Lying DB Leg Curl (weight between feet)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Lying Machine Leg Curl</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=1Tq3QdYUuHs" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/1Tq3QdYUuHs/mqdefault.jpg" alt="Leg curl form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Standing Calf Raise</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Calves</span>
+        <span class="assist">Full ankle extension on straight knees</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Single-Leg DB Calf Raise on platform</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Standing Machine Calf Raise or Leg Press
+          Calves</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=gwLzBJYoWlI" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/gwLzBJYoWlI/mqdefault.jpg" alt="Calf raise form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Hanging Knee / Leg Raise</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-core">Core</span>
+        <span class="assist">Flexes pelvis upward to flatten lower belly</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Lying Leg Raise with light DB between feet</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Captain's Chair Vertical Knee Tuck</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=p9hhX_Sx5v0" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/p9hhX_Sx5v0/mqdefault.jpg" alt="Core form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="push-b-heading" tabindex="0">
+  <h2 id="push-b-heading">5. Day 4 (Thursday) — Push B (Chest, Shoulders &amp; Arms)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>30° Incline Dumbbell Press</strong></td>
+      <td>4 × 8–10</td>
+      <td class="muscles">
+        <span class="badge badge-push">Chest</span>
+        <span class="assist">Fills upper hollow under the collarbone</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Incline DB Neutral-Grip Press</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Incline Hammer Strength Machine / Smith Press
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=LYZDsNv8kJ8" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/LYZDsNv8kJ8/mqdefault.jpg" alt="Incline press form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Flat Dumbbell Press</strong></td>
+      <td>3 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Chest</span>
+        <span class="assist">Allows deeper bottom stretch than a barbell</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Heavy Flat Dumbbell Press</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Converging Machine Chest Press</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/shorts/hWbUlkb5Ms4" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/hWbUlkb5Ms4/mqdefault.jpg" alt="Bench press form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Cable Lateral Raise</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-push">Shoulders</span>
+        <span class="assist">Smooth tension without dropping off at bottom</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Seated DB Lateral Raise</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Machine Lateral Raise</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=3VcKaXpzqRo" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/3VcKaXpzqRo/mqdefault.jpg" alt="Lateral raise form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Low-to-High Cable Fly</strong></td>
+      <td>2 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-push">Chest</span>
+        <span class="assist">Upward scooping motion finishing at chin level</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Low-Incline Dumbbell Fly</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Incline Cable Crossover</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=Iwe6AmxVf7o" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/Iwe6AmxVf7o/mqdefault.jpg" alt="Cable fly form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Overhead Cable Rope Extension</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Arms</span>
+        <span class="assist">Shoulders overhead = a deep stretch through the arms</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Two-Handed Seated Overhead DB Extension</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Overhead Cable Extension (low pulley)</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=_gsUck-7M74" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/_gsUck-7M74/mqdefault.jpg" alt="Overhead extension form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Lying DB Skull Crushers</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-push">Arms</span>
+        <span class="assist">Lower dumbbells to sides of forehead/ears</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Flat Bench Neutral-Grip DB Skull Crusher</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> EZ-Bar Smith Machine Skull Crusher</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=2-LAMcpzODU" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/2-LAMcpzODU/mqdefault.jpg" alt="Skull crusher form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="pull-b-heading" tabindex="0">
+  <h2 id="pull-b-heading">6. Day 5 (Friday) — Pull B (Back, Shoulders &amp; Arms)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>Chest-Supported T-Bar / Machine Row</strong></td>
+      <td>4 × 8–10</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Heavy row without lower back fatigue</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Chest-Supported Incline DB Row (elbows flared)
+        </div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> T-Bar Row Machine or Chest-Supported Row</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/GZbfZ033f74/mqdefault.jpg" alt="Row form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Close Neutral-Grip Pulldown</strong></td>
+      <td>4 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Drives elbows directly down to ribs</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Alternating Kneeling DB Row</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> V-Bar Lat Pulldown or Dual Cable Pulldown
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=eGo4IYlbE5g" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/eGo4IYlbE5g/mqdefault.jpg" alt="Lat pulldown form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Cable Straight-Arm Pulldown</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Back</span>
+        <span class="assist">Zero bicep assistance; pulls straight down</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Dumbbell Pullover on Flat Bench</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Cable Straight-Arm Rope Pushdown</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=GZbfZ033f74" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/GZbfZ033f74/mqdefault.jpg" alt="Straight arm pulldown"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Reverse Pec Deck / Rear Delt Fly</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Shoulders</span>
+        <span class="assist">Strict horizontal shoulder abduction</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Bent-Over DB Rear Delt Fly</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Reverse Pec Deck Fly Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=EA7u4Q_8HQ0" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/EA7u4Q_8HQ0/mqdefault.jpg" alt="Rear delt fly form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Dumbbell Hammer Curls</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-pull">Arms</span>
+        <span class="assist">Neutral thumbs-up grip pushes bicep wider</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Standing / Seated DB Hammer Curls</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Cable Rope Hammer Curls (low pulley)</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ykJmrZ5v0Oo" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/ykJmrZ5v0Oo/mqdefault.jpg" alt="Hammer curl form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section table-section workout-section" aria-labelledby="legs-b-heading" tabindex="0">
+  <h2 id="legs-b-heading">7. Day 6 (Saturday) — Legs B (Legs, Glutes &amp; Core)</h2>
+  <table class="exercise-table">
+    <tr>
+      <th>Exercise</th>
+      <th>Sets × Reps</th>
+      <th>Muscles Worked</th>
+      <th>Dumbbell / Machine Alternates</th>
+      <th>Demo</th>
+    </tr>
+    <tr>
+      <td><strong>Romanian Deadlift (RDL)</strong></td>
+      <td>4 × 8–10</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs &amp; Glutes</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Dumbbell RDL (hip push-back cue)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Smith Machine RDL or Low Cable Pull-Through
+        </div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=jEy_czb3RKA" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/jEy_czb3RKA/mqdefault.jpg" alt="RDL form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Seated Leg Curl Machine</strong></td>
+      <td>3 × 10–12</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs</span>
+        <span class="assist">Seated position provides greater hamstring stretch than lying</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Dumbbell Floor Hamstring Curl</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Seated Leg Curl Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=1Tq3QdYUuHs" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/1Tq3QdYUuHs/mqdefault.jpg" alt="Leg curl form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Hack Squat / Goblet Squat</strong></td>
+      <td>3 × 8–12</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Legs</span>
+        <span class="assist">Knee-dominant movement to balance RDLs</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Heel-Elevated DB Goblet Squat</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Hack Squat Machine or Pendulum Squat</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ultWZbUMPL8" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/ultWZbUMPL8/mqdefault.jpg" alt="Squat form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr>
+      <td><strong>Seated Calf Raise</strong></td>
+      <td>3 × 12–15</td>
+      <td class="muscles">
+        <span class="badge badge-legs">Calves</span>
+        <span class="assist">Bent knees emphasize the calves in a seated position</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Seated DB Calf Raise (heavy DBs resting on knees)
+        </div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Seated Calf Machine</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=gwLzBJYoWlI" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/gwLzBJYoWlI/mqdefault.jpg" alt="Calf raise form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+    <tr class="highlight-row">
+      <td><strong>Plank Holds / Dead Bug</strong></td>
+      <td>3 × 45–60 sec</td>
+      <td class="muscles">
+        <span class="badge badge-core">Core</span>
+        <span class="assist">Draws stomach inward; reinforces lumbar spine</span>
+      </td>
+      <td class="alts">
+        <div class="alt-group"><span class="alt-tag alt-db">DB</span> Weighted Dead Bug (holding light DB)</div>
+        <div class="alt-group"><span class="alt-tag alt-mach">MACH</span> Cable Kneeling Ab Crunch</div>
+      </td>
+      <td class="demo"><a class="demo-link" href="https://www.youtube.com/watch?v=ASdvN_XEl_c" target="_blank"
+          rel="noopener"><img src="https://img.youtube.com/vi/ASdvN_XEl_c/mqdefault.jpg" alt="Plank form"
+            loading="lazy"><span>Watch</span></a></td>
+    </tr>
+  </table>
+  </section>
+
+  <section class="plan-section" aria-labelledby="progression-heading">
+  <h2 id="progression-heading">8. Progression &amp; Nutrition Rules</h2>
+  <ul>
+    <li><strong>Double Progression:</strong> Start at the low rep target (e.g. 8 reps). Keep that weight until you can
+      complete the high rep limit (e.g. 12 reps) across all sets with strict form before increasing weight by 1–2 kg on
+      dumbbells or 2.5–5 kg on machines/bars.</li>
+    <li><strong>RIR (Reps in Reserve):</strong> Maintain 1–2 reps in reserve on compound lifts (bench presses, squats,
+      rows, RDLs). Take isolation exercises (curls, pushdowns, lateral raises, leg extensions) to 0–1 RIR.</li>
+    <li><strong>Rest Intervals:</strong> Rest 2–3 minutes on heavy compound lifts; 60–90 seconds on isolation and core
+      exercises.</li>
+    <li><strong>Daily Nutrition:</strong> 1,900–2,100 kcal/day (mild cut for fat loss around midsection), 130–160 g
+      protein daily, and 3–4 liters of water.</li>
+  </ul>
+  </section>
+
+  <p class="footer">Stay consistent. Strength first. Fat loss follows.</p>
+
+  <footer class="approval">
+    <div class="approval-text">
+      <div class="label">Prepared &amp; approved by</div>
+      <div class="trainer-name">FitnessProgramer</div>
+      <div class="trainer-title">Certified Strength &amp; Conditioning Trainer</div>
+    </div>
+    <img src="https://fitnessprogramer.com/wp-content/uploads/2021/03/logo.png" alt="Fitness Programer.Com" width="200"
+      height="100">
+  </footer>
+  </main>
 
 </body>
+
 </html>
