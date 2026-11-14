@@ -1,3 +1,6 @@
+const IMG_BASE =
+  "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/";
+
 const workouts = [
   {
     id: "pushA",
@@ -11,43 +14,43 @@ const workouts = [
         "Incline Dumbbell Press",
         "3 × 8–12",
         "Upper chest",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Incline_Dumbbell_Press/0.jpg`,
       ],
       [
         "Flat Barbell Bench Press",
         "3 × 6–10",
         "Mid chest",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Barbell_Bench_Press_-_Medium_Grip/0.jpg`,
       ],
       [
         "Seated Cable Row",
         "2 × 8–12",
         "Mid-back",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Seated_Cable_Rows/0.jpg`,
       ],
       [
         "Seated Dumbbell Shoulder Press",
         "2 × 8–12",
         "Front delts",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Dumbbell_Shoulder_Press/0.jpg`,
       ],
       [
         "Dumbbell Lateral Raise",
         "3 × 12–20",
         "Side delts",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Side_Lateral_Raise/0.jpg`,
       ],
       [
         "Rope Triceps Pushdown",
         "3 × 10–15",
         "Lateral / medial triceps",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Triceps_Pushdown_-_Rope_Attachment/0.jpg`,
       ],
       [
         "Overhead Cable Extension",
         "2 × 10–15",
         "Long-head triceps",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Cable_Rope_Overhead_Triceps_Extension/0.jpg`,
       ],
     ],
   },
@@ -63,43 +66,43 @@ const workouts = [
         "Wide-Grip Lat Pulldown",
         "3 × 8–12",
         "Lats / back width",
-        "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500",
+        `${IMG_BASE}Wide-Grip_Lat_Pulldown/0.jpg`,
       ],
       [
         "Single-Arm Cable Lat Pulldown",
         "2 × 10–12",
         "Lats",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}One_Arm_Lat_Pulldown/0.jpg`,
       ],
       [
         "Seated Cable Row",
         "2 × 8–12",
         "Mid-back",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Seated_Cable_Rows/0.jpg`,
       ],
       [
         "Face Pull",
         "2 × 12–20",
         "Rear delts / external rotators",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Face_Pull/0.jpg`,
       ],
       [
         "Incline Dumbbell Curl",
         "3 × 8–12",
         "Biceps long-head emphasis",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Incline_Dumbbell_Curl/0.jpg`,
       ],
       [
         "Preacher Curl",
         "2 × 10–15",
         "Biceps short-head emphasis",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Preacher_Curl/0.jpg`,
       ],
       [
         "Cable External Rotation",
         "2 × 12–15",
         "Rotator cuff",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Cable_Internal_Rotation/0.jpg`,
       ],
     ],
   },
@@ -115,37 +118,32 @@ const workouts = [
         "Barbell Squat",
         "3 × 6–10",
         "Quads / glutes",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Barbell_Full_Squat/0.jpg`,
       ],
-      [
-        "Leg Press",
-        "3 × 10–12",
-        "Quads",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
-      ],
+      ["Leg Press", "3 × 10–12", "Quads", `${IMG_BASE}Leg_Press/0.jpg`],
       [
         "Leg Extension",
         "2 × 12–15",
         "Quads",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Leg_Extensions/0.jpg`,
       ],
       [
         "Hip Adduction Machine",
         "2 × 12–15",
         "Inner thighs / adductors",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Thigh_Adductor/0.jpg`,
       ],
       [
         "Standing Calf Raise",
         "3 × 10–15",
         "Gastrocnemius",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Standing_Calf_Raises/0.jpg`,
       ],
       [
         "Tibialis Raise",
         "2 × 15–20",
         "Tibialis anterior",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Toe_Raise/0.jpg`,
       ],
     ],
   },
@@ -161,37 +159,37 @@ const workouts = [
         "Chest Dips (Forward Lean)",
         "3 × 8–12",
         "Lower chest emphasis",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Dips_-_Chest_Version/0.jpg`,
       ],
       [
         "High-to-Low Cable Fly",
         "3 × 12–15",
         "Lower chest emphasis",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Cable_Crossover/0.jpg`,
       ],
       [
         "Cable Lateral Raise",
         "3 × 12–20",
         "Side delts",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Cable_Seated_Lateral_Raise/0.jpg`,
       ],
       [
         "Reverse Cable Fly",
         "2 × 12–20",
         "Rear delts",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Cable_Rear_Delt_Fly/0.jpg`,
       ],
       [
         "Overhead Cable Triceps Extension",
         "3 × 10–15",
         "Long-head triceps",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Cable_Rope_Overhead_Triceps_Extension/0.jpg`,
       ],
       [
         "EZ-Bar Skull Crusher",
         "2 × 10–12",
         "Triceps",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}EZ-Bar_Skullcrusher/0.jpg`,
       ],
     ],
   },
@@ -207,49 +205,49 @@ const workouts = [
         "Chest-Supported T-Bar Row",
         "3 × 6–10",
         "Mid-back thickness",
-        "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500",
+        `${IMG_BASE}Lying_T-Bar_Row/0.jpg`,
       ],
       [
         "Neutral-Grip Lat Pulldown",
         "2 × 8–12",
         "Lats",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}V-Bar_Pulldown/0.jpg`,
       ],
       [
         "Dumbbell Shrugs",
         "2 × 10–15",
         "Upper traps",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Dumbbell_Shrug/0.jpg`,
       ],
       [
         "Reverse Pec Deck",
         "3 × 12–20",
         "Rear delts",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Reverse_Machine_Flyes/0.jpg`,
       ],
       [
         "Incline Bench Y-Raise",
         "2 × 12–15",
         "Lower traps",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Front_Incline_Dumbbell_Raise/0.jpg`,
       ],
       [
         "Dumbbell Hammer Curl",
         "3 × 10–12",
         "Brachialis / brachioradialis",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Hammer_Curls/0.jpg`,
       ],
       [
         "Reverse EZ-Bar Curl",
         "2 × 10–15",
         "Forearms",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Reverse_Barbell_Curl/0.jpg`,
       ],
       [
         "Back Extension",
         "2 × 10–15",
         "Spinal erectors",
-        "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500",
+        `${IMG_BASE}Hyperextensions_Back_Extensions/0.jpg`,
       ],
     ],
   },
@@ -265,43 +263,43 @@ const workouts = [
         "Romanian Deadlift",
         "3 × 8–12",
         "Hamstrings / glutes",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Romanian_Deadlift/0.jpg`,
       ],
       [
         "Barbell Hip Thrust",
         "3 × 8–12",
         "Gluteus maximus",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Barbell_Hip_Thrust/0.jpg`,
       ],
       [
         "Lying Leg Curl",
         "3 × 10–15",
         "Hamstrings",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Lying_Leg_Curls/0.jpg`,
       ],
       [
         "Bulgarian Split Squat",
         "2 × 8–12 each leg",
         "Quads / glutes",
-        "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=500",
+        `${IMG_BASE}Split_Squat_with_Dumbbells/0.jpg`,
       ],
       [
         "Hip Abduction Machine",
         "2 × 12–20",
         "Glute medius / minimus",
-        "https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=500",
+        `${IMG_BASE}Thigh_Abductor/0.jpg`,
       ],
       [
         "Seated Calf Raise",
         "3 × 12–20",
         "Soleus",
-        "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500",
+        `${IMG_BASE}Seated_Calf_Raise/0.jpg`,
       ],
       [
         "Tibialis Raise",
         "2 × 15–20",
         "Tibialis anterior",
-        "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500",
+        `${IMG_BASE}Toe_Raise/0.jpg`,
       ],
     ],
   },
@@ -404,10 +402,10 @@ function renderWorkouts() {
     <section class="day-block">
       <div class="day-header">
         <div>
-          <h3>${w.day} / ${w.name}</h3>
+          <h3>${w.day} / <span>${w.name}</span></h3>
           <p>${w.priority} · ${w.muscles}</p>
         </div>
-        <span class="eyebrow">${w.exercises.length} EXERCISES</span>
+        <span class="day-count">${w.exercises.length} EXERCISES</span>
       </div>
       <div class="exercise-grid">
         ${w.exercises
@@ -415,19 +413,31 @@ function renderWorkouts() {
             const key = `${w.id}-${i}`;
             const done = completed.includes(key);
             return `
-            <article class="exercise-card">
-              <img src="${e[3]}" alt="${e[0]}" loading="lazy"
-                onerror="this.onerror=null;this.src='https://placehold.co/400x400/202f28/b7f36b?text=SID+FITNESS'">
-              <div class="exercise-info">
+            <article class="exercise-card ${done ? "completed" : ""}">
+              <div class="exercise-title-row">
                 <h4>${e[0]}</h4>
-                <div class="exercise-meta">
-                  <span>${e[1]}</span><span>${e[2]}</span>
+                <span class="rep-pill">${e[1]}</span>
+              </div>
+              <div class="exercise-visual-row">
+                <div class="exercise-visual">
+                  <img src="${e[3]}" alt="${e[0]}" loading="lazy"
+                    onerror="this.onerror=null;this.src='https://placehold.co/400x300/17202b/ed2635?text=SID+FITNESS'">
+                  <span class="visual-caption">${w.category.toUpperCase()}</span>
                 </div>
-                <p>Perform controlled repetitions with good technique and appropriate resistance.</p>
-                <button class="complete-button ${done ? "done" : ""}"
-                  onclick="toggleExercise('${key}')">
-                  ${done ? "✓ Completed" : "Mark as completed"}
-                </button>
+                <div class="muscle-target">
+                  <span class="target-icon">◉</span>
+                  <small>TARGET</small>
+                  <strong>${e[2]}</strong>
+                </div>
+              </div>
+              <div class="exercise-details">
+                <p class="form-cue"><i>✓</i> Perform controlled repetitions with full range of motion.</p>
+                <div class="card-actions">
+                  <button class="complete-button ${done ? "done" : ""}" style="width:100%"
+                    onclick="toggleExercise('${key}')">
+                    ${done ? "✓ Completed" : "Mark as completed"}
+                  </button>
+                </div>
               </div>
             </article>`;
           })
@@ -436,7 +446,7 @@ function renderWorkouts() {
     </section>
   `,
       )
-      .join("") || "<p>No matching exercises found.</p>";
+      .join("") || '<p class="empty-state">No matching exercises found.</p>';
 }
 
 function toggleExercise(key) {
