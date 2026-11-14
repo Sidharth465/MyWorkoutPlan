@@ -10,8 +10,6 @@
   --accent: #c84f32;
   --accent-soft: #fbede6;
   --lime-soft: #f0f4d9;
-  --map-primary: #d65b38;
-  --map-support: #3282a3;
 }
 
 * {
@@ -307,60 +305,6 @@ td.demo {
   border-left: 4px solid #9a9f42;
 }
 
-.muscle-map {
-  width: 100%;
-  max-width: 185px;
-  margin: 12px 0 0;
-  padding-top: 9px;
-  border-top: 1px solid var(--line);
-}
-
-.muscle-map-canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.map-caption {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 0.61rem;
-  line-height: 1.35;
-}
-
-.map-caption strong {
-  color: var(--ink);
-}
-
-.map-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 5px;
-  font-size: 0.6rem;
-  font-weight: 700;
-}
-
-.map-key {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.map-swatch {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-
-.map-swatch-primary {
-  background: var(--map-primary);
-}
-
-.map-swatch-support {
-  background: var(--map-support);
-}
-
 .footer {
   margin: 36px 0 20px;
   color: var(--blue);
@@ -428,7 +372,7 @@ td:focus-visible,
   outline-offset: 3px;
 }
 
-@media (max-width: 680px) {
+@media (max-width: 1179px) {
   .page-shell {
     width: min(100% - 28px, 1180px);
   }
@@ -445,14 +389,169 @@ td:focus-visible,
     padding: 14px 15px;
   }
 
-  th,
-  td {
+  .table-section {
+    overflow: visible;
+  }
+
+  .schedule-table,
+  .exercise-table {
+    display: block;
+    min-width: 0;
+    background: transparent;
+  }
+
+  .schedule-table tr,
+  .exercise-table tr {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+
+  .schedule-table tr:not(:first-child),
+  .exercise-table tr:not(:first-child) {
+    border-radius: 2px;
+  }
+
+  .schedule-table tr:first-child,
+  .exercise-table tr:first-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .schedule-table td,
+  .exercise-table td {
+    display: block;
+    width: auto;
+    min-width: 0;
     padding: 9px 10px;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .schedule-table td:last-child,
+  .exercise-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .schedule-table tr:not(:first-child) td:not(:first-child):not([colspan]),
+  .exercise-table tr:not(:first-child) td:not(:first-child) {
+    display: grid;
+    grid-template-columns: minmax(88px, 30%) minmax(0, 1fr);
+    align-items: start;
+    gap: 8px;
+  }
+
+  .schedule-table td:first-child {
+    border-left: 0;
+  }
+
+  .schedule-table tr:not(:first-child) td:first-child:not([colspan]),
+  .exercise-table tr:not(:first-child) td:first-child {
+    border-bottom: 1px solid var(--line);
+    font-size: 0.94rem;
+    font-weight: 750;
+  }
+
+  .schedule-table tr:not(:first-child) td:nth-child(2)::before,
+  .schedule-table tr:not(:first-child) td:nth-child(3)::before,
+  .schedule-table tr:not(:first-child) td:nth-child(4)::before {
+    color: var(--muted);
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .schedule-table tr:not(:first-child) td:nth-child(2)::before {
+    content: "Routine";
+  }
+
+  .schedule-table tr:not(:first-child) td:nth-child(3)::before {
+    content: "Primary focus";
+  }
+
+  .schedule-table tr:not(:first-child) td:nth-child(4)::before {
+    content: "Arms / core";
+  }
+
+  .schedule-table tr:last-child td[colspan] {
+    display: block;
+    border: 0;
+    background: var(--blue-soft);
+    text-align: left;
+  }
+
+  .exercise-table tr:not(:first-child) td:nth-child(2)::before,
+  .exercise-table tr:not(:first-child) td:nth-child(3)::before,
+  .exercise-table tr:not(:first-child) td:nth-child(4)::before,
+  .exercise-table tr:not(:first-child) td:nth-child(5)::before {
+    color: var(--muted);
+    font-size: 0.64rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .exercise-table tr:not(:first-child) td:nth-child(2)::before {
+    content: "Sets × reps";
+  }
+
+  .exercise-table tr:not(:first-child) td:nth-child(3)::before {
+    content: "Muscles worked";
+  }
+
+  .exercise-table tr:not(:first-child) td:nth-child(4)::before {
+    content: "Alternates";
+  }
+
+  .exercise-table tr:not(:first-child) td:nth-child(5)::before {
+    content: "Demo";
+  }
+
+  .schedule-table tbody tr:not(:first-child):not(:last-child) td,
+  .exercise-table tbody tr:not(:first-child) td {
+    background: transparent;
+  }
+
+  .schedule-table tr:last-child td {
+    background: var(--blue-soft);
+    text-align: left !important;
+  }
+
+  .highlight-row {
+    border-left: 4px solid #9a9f42 !important;
+    background: var(--lime-soft) !important;
+  }
+
+  .highlight-row td:first-child {
+    border-left: 0;
+  }
+
+  .exercise-table td.muscles,
+  .exercise-table td.alts,
+  .exercise-table td.demo {
+    font-size: 0.82rem;
+  }
+
+  .demo-link {
+    flex-direction: row;
+    align-items: center;
   }
 
   .demo-link img {
     width: 72px;
     height: 40px;
+  }
+
+  .alt-group {
+    overflow-wrap: anywhere;
   }
 
   .approval {

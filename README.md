@@ -10,6 +10,5 @@ https://sidharth465.github.io/MyWorkoutPlan/
 
 - `index.html` contains the plan, schedule, exercise prescriptions, demos, and coaching notes.
 - `styles.css` holds the responsive page styles.
-- `assets/muscle-maps.js` maps each exercise to broad muscle groups and draws the front/back illustrations locally with Canvas 2D.
 
-The site has no build step or package dependencies. The illustrations are generated in the browser from the local script; no image downloads or additional assets are required.
+The site has no build step or package dependencies. Workout tables retain their desktop layout and become labeled, stacked rows on narrow screens.
